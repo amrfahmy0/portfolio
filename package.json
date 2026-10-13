@@ -1,0 +1,14 @@
+{
+  "name": "amr-fahmy-portfolio",
+  "version": "1.0.0",
+  "description": "Amr Fahmy — Freelance Developer Portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.0"
+  }
+}
