@@ -843,33 +843,47 @@ p + p { margin-top: 1rem; }
   font-weight: 600;
 }
 
-/* Subtle Footnote Line */
-.projects-discreet-note {
-  margin-top: 3rem;
-  padding: 0.95rem 1.4rem;
+/* Discreet Collaboration Banner at Top of Projects */
+.projects-discreet-banner {
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
+  padding: 0.95rem 1.4rem;
+  margin-bottom: 2.25rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  font-size: 0.8125rem;
-  color: var(--gray-500);
-  line-height: var(--leading-relaxed);
-  text-align: center;
-  max-width: 860px;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-sm);
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.projects-discreet-note svg {
-  color: var(--gray-400);
+.discreet-banner-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  background: var(--blue-bg);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.projects-discreet-note strong {
+.discreet-banner-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.discreet-banner-text {
+  font-size: 0.8125rem;
   color: var(--gray-600);
+  line-height: var(--leading-relaxed);
+}
+
+.discreet-banner-text strong {
+  color: var(--navy);
   font-weight: 600;
 }
 
@@ -1007,19 +1021,31 @@ p + p { margin-top: 1rem; }
 .project-card.featured .project-card-image {
   width: 100%;
   height: 100%;
-  min-height: 340px;
-  background: var(--white);
+  min-height: 400px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
   border-left: 1px solid var(--gray-200);
   order: 2;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.75rem;
 }
 
 .project-card.featured .project-card-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
   object-position: center;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  transition: transform var(--duration-slow) var(--ease);
+}
+
+.project-card.featured:hover .project-card-image img {
+  transform: translateY(-2px) scale(1.02);
 }
 
 .project-card.featured .project-card-body {
@@ -1595,10 +1621,10 @@ p + p { margin-top: 1rem; }
     grid-template-columns: 1fr;
   }
 
-  .projects-discreet-note {
+  .projects-discreet-banner {
     flex-direction: column;
-    padding: 1.1rem;
-    gap: 0.6rem;
+    padding: 1rem 1.25rem;
+    gap: 0.75rem;
     text-align: center;
   }
 
